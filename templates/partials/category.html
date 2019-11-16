@@ -1,0 +1,6 @@
+{% if post.category %}
+    Category:
+    <a href="/posts/?category={{ post.category.id }}">
+        <small class="category">{{ post.category }}</small>
+    </a>
+{% endif %}

@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/app.css' %}">
+    <title>Easy Blog</title>
+</head>
+<body>
+    <h1>My Blog</h1>
+    <hr>
+    {% block content %}
+        {# Content here #}
+    {% endblock %}
+</body>
+</html>

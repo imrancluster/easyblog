@@ -7,6 +7,9 @@ def index(request):
 
     posts = BlogPost.objects.all()
 
+    if 'category' in request.GET:
+        posts = BlogPost.objects.filter(category=int(request.GET.get('category')))
+
     context = {
         'posts': posts.order_by('-created_at')
     }
