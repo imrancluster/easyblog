@@ -10,6 +10,9 @@
     <div class="posts">
         <div class="post">
             <h3 class="title">{{ post.title }}</h3>
+            {% if post.category %}
+                Category: <a href=""><small class="category">{{ post.category }}</small></a>
+            {% endif %}
             <small>{{ post.created_at }}</small>
             <p class="body">{{ post.body }}</p>
         </div>

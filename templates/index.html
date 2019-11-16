@@ -13,7 +13,10 @@
                 <a href="{% url 'view_post' post.pk %}">
                     <h3 class="title">{{ post.title }}</h3>
                 </a>
-                <small>{{ post.created_at }}</small>
+                {% if post.category %}
+                    Category: <a href=""><small class="category">{{ post.category }}</small></a>
+                {% endif %}
+                <small class="datetime">{{ post.created_at }}</small>
                 <p class="body">{{ post.body | truncatewords:20 }}</p>
             </div>
         {% endfor %}

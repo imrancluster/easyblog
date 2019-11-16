@@ -14,6 +14,9 @@ class BlogPostAdmin(admin.ModelAdmin):
     # adding search field
     search_fields = ['title', 'body']
 
+    # admin list display
+    list_display = ['title', 'category']
+
 @admin.register(Category)
 class Category(admin.ModelAdmin):
     pass
