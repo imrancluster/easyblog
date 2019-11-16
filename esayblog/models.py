@@ -8,7 +8,8 @@ class BlogPost(models.Model):
         'Category',
         on_delete=models.CASCADE,
         blank=True,
-        null=True
+        null=True,
+        related_name='posts'
     )
 
     def __str__(self):
