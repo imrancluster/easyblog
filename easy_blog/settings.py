@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from django.utils.translation import ugettext_lazy as _
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -31,6 +32,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jet.dashboard',
+    'jet',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -120,3 +123,59 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+JET_DEFAULT_THEME = 'default'
+
+JET_SIDE_MENU_COMPACT = True
+
+JET_THEMES = [
+    {
+        'theme': 'default',  # theme folder name
+        'color': '#47bac1',  # color of the theme's button in user menu
+        'title': 'Default'  # theme title
+    },
+    {
+        'theme': 'green',
+        'color': '#44b78b',
+        'title': 'Green'
+    },
+    {
+        'theme': 'light-green',
+        'color': '#2faa60',
+        'title': 'Light Green'
+    },
+    {
+        'theme': 'light-violet',
+        'color': '#a464c4',
+        'title': 'Light Violet'
+    },
+    {
+        'theme': 'light-blue',
+        'color': '#5EADDE',
+        'title': 'Light Blue'
+    },
+    {
+        'theme': 'light-gray',
+        'color': '#222',
+        'title': 'Light Gray'
+    }
+]
+
+# Have to check at sanofi
+# JET_INDEX_DASHBOARD = 'dashboards.primary.CustomIndexDashboard'
+JET_INDEX_DASHBOARD = 'jet.dashboard.dashboard.DefaultIndexDashboard'
+
+
+JET_SIDE_MENU_ITEMS = [  # A list of application or custom item dicts
+    {'label': _('System'), 'items': [
+        {'label': _('Log out'), 'url': '/logout/'}
+    ]},
+    {'label': _('Posts Section'), 'items': [
+        {'name': 'esayblog.blogpost', 'label': _('Posts')},
+        {'name': 'esayblog.category', 'label': _('Category')}
+    ]},
+    {'label': _('Users'), 'items': [
+        {'name': 'auth.user'},
+        {'name': 'auth.group'}
+    ]}
+]
