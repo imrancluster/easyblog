@@ -1,0 +1,9 @@
+{% load i18n %}
+
+<ul>
+    {% for post in module.children %}
+        <li>
+            <a href="#">{{ post.title }} - {{ post.created_at }}</a>
+        </li>
+    {% endfor %}
+</ul>

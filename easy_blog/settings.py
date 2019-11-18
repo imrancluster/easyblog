@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'jet.dashboard',
     'jet',
     'django.contrib.admin',
+
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -162,8 +163,8 @@ JET_THEMES = [
 ]
 
 # Have to check at sanofi
-# JET_INDEX_DASHBOARD = 'dashboards.primary.CustomIndexDashboard'
-JET_INDEX_DASHBOARD = 'jet.dashboard.dashboard.DefaultIndexDashboard'
+JET_INDEX_DASHBOARD = 'dashboards.primary.CustomIndexDashboard'
+# JET_INDEX_DASHBOARD = 'jet.dashboard.dashboard.DefaultIndexDashboard'
 
 
 JET_SIDE_MENU_ITEMS = [  # A list of application or custom item dicts
